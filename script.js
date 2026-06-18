@@ -40,15 +40,18 @@ input.addEventListener("change", async function () {
         const parts = line.trim().split(/\s+/);
 
         if (parts.length >= 2) {
-            const name = parts[0];
-            const score = parts[1];
+            const score = parts[parts.length - 1];
+            const name = parts.slice(0, parts.length - 1).join(" ");
 
             if (!isNaN(score)) {
                 const row = document.createElement("tr");
+
                 const tdName = document.createElement("td");
                 tdName.textContent = name;
+
                 const tdScore = document.createElement("td");
                 tdScore.textContent = score;
+
                 row.appendChild(tdName);
                 row.appendChild(tdScore);
                 tableBody.appendChild(row);
