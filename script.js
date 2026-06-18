@@ -46,7 +46,7 @@ input.addEventListener("change", async function () {
 
         const name = parts.slice(0, 3).join(" ");
 
-        const score = parts.find(p => /^\d+\.\d+$/.test(p));
+        const score = parts.find(p => /^\d+(\.\d+)?$/.test(p));
 
         const row = document.createElement("tr");
 
